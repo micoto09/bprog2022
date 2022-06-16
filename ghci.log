@@ -184,3 +184,132 @@ Ok, one module loaded.
 2022-06-09 16:07:50.116360922
 >>> :quit
 Leaving GHCi.
+GHCi, version 9.0.2: https://www.haskell.org/ghc/  :? for help
+Loaded GHCi configuration from /home/mikoto/bprog2022/.ghci
+2022-06-16 15:01:29.768260613
+>>> GHCi, version 9.0.2: https://www.haskell.org/ghc/  :? for help
+Loaded GHCi configuration from /home/mikoto/bprog2022/.ghci
+2022-06-16 15:02:34.91631397
+>>> take 3 [3,1,4,1,5]
+[3,1,4]
+2022-06-16 15:04:08.602957932
+>>> :e src/First.hs
+   1  module First where
+   2  
+   3  double :: Int -> Int
+   4  double x = x + x
+   5  
+   6  quadruple :: Int -> Int
+   7  quadruple x = double (double x)
+Ok, no modules loaded.
+2022-06-16 15:11:05.419613407
+>>> :l src/First.hs
+[1 of 1] Compiling First            ( src/First.hs, interpreted )
+Ok, one module loaded.
+2022-06-16 15:11:05.49715674
+>>> double
+
+<interactive>:4:1: error:
+    • No instance for (Show (Int -> Int)) arising from a use of ‘print’
+        (maybe you haven't applied a function to enough arguments?)
+    • In a stmt of an interactive GHCi command: print it
+2022-06-16 15:13:01.468240951
+>>> take (double 2)[1,2,3,4]
+[1,2,3,4]
+2022-06-16 15:15:02.885088629
+>>> [1 .. 10]
+[1,2,3,4,5,6,7,8,9,10]
+2022-06-16 15:20:12.31354806
+>>> :e
+   1  module First where
+   2  
+   3  double :: Int -> Int
+   4  double x = x + x
+   5  
+   6  quadruple :: Int -> Int
+   7  quadruple x = double (double x)
+   8  
+   9  factorial :: Integer -> Integer
+  10  factorial n = product [1 .. n]
+[1 of 1] Compiling First            ( src/First.hs, interpreted )
+Ok, one module loaded.
+2022-06-16 15:20:52.898302145
+>>> factorial 3
+6
+2022-06-16 15:21:54.091795351
+>>> factorial 4
+24
+2022-06-16 15:22:21.428816996
+>>> .r
+
+<interactive>:10:1: error: parse error on input ‘.’
+2022-06-16 15:38:10.819398723
+>>> .r
+
+<interactive>:11:1: error: parse error on input ‘.’
+2022-06-16 15:39:59.254518805
+>>> :e
+   1  module First where
+   2  
+   3  double :: Int -> Int
+   4  double x = x + x
+   5  
+   6  quadruple :: Int -> Int
+   7  quadruple x = double (double x)
+   8  
+   9  factorial :: Integer -> Integer
+  10  factorial n = product [1 .. n]
+  11  
+  12  average :: [Int] -> Int
+  13  average xs = sum xs `div` length xs
+  14  
+  15  ave :: [Int] -> Int
+  16  ave xs = div (sum xs) (length xs)
+[1 of 1] Compiling First            ( src/First.hs, interpreted )
+Ok, one module loaded.
+2022-06-16 15:41:52.717216529
+>>> :t take 3 [1,2,3,4,5]
+take 3 [1,2,3,4,5] :: Num a => [a]
+2022-06-16 15:49:41.78165073
+>>> init [1 .. 5]
+[1,2,3,4]
+2022-06-16 16:06:54.829508745
+>>> :e
+   1  module First where
+   2  
+   3  double :: Int -> Int
+   4  double x = x + x
+   5  
+   6  quadruple :: Int -> Int
+   7  quadruple x = double (double x)
+   8  
+   9  factorial :: Integer -> Integer
+  10  factorial n = product [1 .. n]
+  11  
+  12  average :: [Int] -> Int
+  13  average xs = sum xs `div` length xs
+  14  
+  15  ave :: [Int] -> Int
+  16  ave xs = div (sum xs) (length xs)
+  17  
+  18  myinit :: [a] -> [a]
+  19  myinit [x]
+  20  myinit (x:xs) = x : (init xs)
+[1 of 1] Compiling First            ( src/First.hs, interpreted )
+
+src/First.hs:19:1: error:
+    Parse error: module header, import declaration
+    or top-level declaration expected.
+   |
+19 | myinit [x]
+   | ^^^^^^^^^^
+Failed, no modules loaded.
+2022-06-16 16:14:21.806083209
+>>> myinit [1 .. 3]
+
+<interactive>:16:1: error:
+    • Variable not in scope: myinit :: [a0] -> t
+    • Perhaps you meant ‘init’ (imported from Prelude)
+2022-06-16 16:14:45.498741928
+>>> :q
+Leaving GHCi.
