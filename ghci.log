@@ -630,3 +630,108 @@ Ok, one module loaded.
 2022-06-30 16:01:50.28893747
 >>> :q
 Leaving GHCi.
+GHCi, version 9.0.2: https://www.haskell.org/ghc/  :? for help
+Loaded GHCi configuration from /home/mikoto/bprog2022/.ghci
+2022-07-07 16:04:56.654026351
+>>> :e scr/Caesar where
+catn: scr/Caesar: openFile: does not exist (No such file or directory)
+2022-07-07 16:05:21.777998113
+>>> :l scr/Caesar where
+target ‘scr/Caesar’ is not a module name or a source file
+2022-07-07 16:05:21.845307675
+>>> ord 'A'
+
+<interactive>:3:1: error:
+    • Variable not in scope: ord :: Char -> t
+    • Perhaps you meant one of these:
+        ‘or’ (imported from Prelude), ‘odd’ (imported from Prelude)
+2022-07-07 16:05:32.949729293
+>>> :e src/Ceasar where
+catn: src/Ceasar: openFile: does not exist (No such file or directory)
+2022-07-07 16:06:20.812633552
+>>> :l src/Ceasar where
+target ‘where’ is not a module name or a source file
+2022-07-07 16:06:20.905270896
+>>> :e src/Ceasar .hs
+catn: src/Ceasar: openFile: does not exist (No such file or directory)
+2022-07-07 16:07:20.543809907
+>>> :l src/Ceasar .hs
+
+<no location info>: error: can't find file: .hs
+Failed, no modules loaded.
+2022-07-07 16:07:20.651363662
+>>> :e src/Ceasar.hs
+   1  module Ceasar where
+   2  
+   3  import Date.Char
+
+<no location info>: error: can't find file: .hs
+Failed, no modules loaded.
+2022-07-07 16:08:09.726728425
+>>> :l src/Ceasar.hs
+[1 of 1] Compiling Ceasar           ( src/Ceasar.hs, interpreted )
+
+src/Ceasar.hs:3:1: error:
+    Could not find module ‘Date.Char’
+    Perhaps you meant Data.Char (from base-4.15.1.0)
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+  |
+3 | import Date.Char
+  | ^^^^^^^^^^^^^^^^
+Failed, no modules loaded.
+2022-07-07 16:08:09.837444168
+>>> :e src/Ceasar.hs
+   1  module Ceasar where
+   2  
+   3  import Date.Char
+[1 of 1] Compiling Ceasar           ( src/Ceasar.hs, interpreted )
+
+src/Ceasar.hs:3:1: error:
+    Could not find module ‘Date.Char’
+    Perhaps you meant Data.Char (from base-4.15.1.0)
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+  |
+3 | import Date.Char
+  | ^^^^^^^^^^^^^^^^
+Failed, no modules loaded.
+2022-07-07 16:08:50.687769931
+>>> :l src/Ceasar.hs
+[1 of 1] Compiling Ceasar           ( src/Ceasar.hs, interpreted )
+
+src/Ceasar.hs:3:1: error:
+    Could not find module ‘Date.Char’
+    Perhaps you meant Data.Char (from base-4.15.1.0)
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+  |
+3 | import Date.Char
+  | ^^^^^^^^^^^^^^^^
+Failed, no modules loaded.
+2022-07-07 16:08:50.790519737
+>>> :e src/Ceaser.hs
+catn: src/Ceaser.hs: openFile: does not exist (No such file or directory)
+2022-07-07 16:09:50.055580481
+>>> :l src/Ceaser.hs
+
+<no location info>: error: can't find file: src/Ceaser.hs
+Failed, no modules loaded.
+2022-07-07 16:09:50.151593923
+>>> :e src/Ceasar.hs
+   1  module Ceasar where
+   2  
+   3  import Data.Char
+
+<no location info>: error: can't find file: src/Ceaser.hs
+Failed, no modules loaded.
+2022-07-07 16:10:15.516602041
+>>> :l src/Ceasar.hs
+[1 of 1] Compiling Ceasar           ( src/Ceasar.hs, interpreted )
+Ok, one module loaded.
+2022-07-07 16:10:15.630429872
+>>> ord 'A'
+65
+2022-07-07 16:10:32.978158699
+>>> ord 'a'
+97
+2022-07-07 16:10:39.981913399
+>>> :q
+Leaving GHCi.
